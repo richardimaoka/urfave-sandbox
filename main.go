@@ -10,10 +10,8 @@ import (
 
 func main() {
     app := &cli.App{
-        Name:  "greet",
-        Usage: "fight the loneliness!",
-        Action: func(*cli.Context) error {
-            fmt.Println("Hello friend!")
+        Action: func(cCtx *cli.Context) error {
+            fmt.Printf("Hello %q", cCtx.Args().Get(0))
             return nil
         },
     }
